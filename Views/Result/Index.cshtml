@@ -1,0 +1,47 @@
+@model Result
+<form asp-action="Search" asp-controller="Result" method="GET">
+    <div class="input-group">
+        <input type="text" id="symbolNumber" name="symbolNumber" class="form-control">
+        <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" value="Search">
+        </span>
+    </div>
+</form>
+<br>
+@if(Model==null){
+    <p>SymbolNumber Error</p>
+}else{
+<div class="row">
+
+    <div class="col col-sm-6">
+                <h2  style="color:red">Congratulation! You Are Passed</h2>
+                <div class="card">
+                    <div class="card-hearder">
+                        symbolNumber:@Model.SymbolNumber
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col col-sm-6">
+                                <p>FullName=@(Model.FirstName+Model.LastName)</p>
+                                <p>Neplai:@Model.Nepali</p>
+                                <p>English:@Model.English</p>
+                                <p>Economices:@Model.Economices</p>
+                                <p>ComputerScience:@Model.ComputerScience</p>
+                                <p>Account:@Model.Account</p>
+                                @{
+                                    var total=Model.Nepali+Model.English+Model.Economices+Model.ComputerScience+Model.Account;
+                                }
+                                <p>Total Marks:@total</p>
+                                    Percentege:@(((total/500)*100).ToString("#.0"))
+                            </div>
+                            <div class="col col-sm-6">
+                                <img src="~/images/@Model.ImageUrl" class="thumbnail" height="200px" width="250px">                
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+</div>
+}

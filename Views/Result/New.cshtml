@@ -1,0 +1,56 @@
+@model Result
+<form asp-action="New" asp-controller="Result" method="POST" enctype="multipart/form-data">
+    <input type="hidden" id="AddMode" name="AddMode" value="@ViewBag.AddMode">
+    <input type="hidden" asp-for="Id">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+      <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label asp-for="SymbolNumber"></label>
+        <input asp-for="SymbolNumber" class="form-control">
+        <span asp-validation-for="SymbolNumber" class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label asp-for="English"></label>
+        <input asp-for="English" class="form-control">
+        <span asp-validation-for="English" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Nepali"></label>
+        <input asp-for="Nepali" class="form-control">
+        <span asp-validation-for="Nepali" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Economices"></label>
+        <input asp-for="Economices" class="form-control">
+        <span asp-validation-for="Economices" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Account"></label>
+        <input asp-for="Account" class="form-control">
+        <span asp-validation-for="Account" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="ComputerScience"></label>
+        <input asp-for="ComputerScience" class="form-control">
+        <span asp-validation-for="ComputerScience" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl">UploadImage</label>
+        <input type="file" id="file" name="file" class="form-control">
+        
+    </div>
+     <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Save">
+    </div>
+
+</form>

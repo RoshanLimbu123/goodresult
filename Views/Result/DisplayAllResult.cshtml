@@ -1,0 +1,58 @@
+@model List<Result>
+    <a  asp-action="New" asp-controller="Result" class="btn btn-primary">Add Result</a> 
+    @if(Model.Count==0){
+        <p>No Any Result</p>
+    }else{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FullName</th>
+                <th>SymbolNumber</th>
+                <th>Eng Marks</th>
+                <th>Eco Marks</th>
+                <th>Nep Marks</th>
+                <th>Acc Marks</th>
+                <th>Com Marks</th>
+                <th>Total Marks</th>
+                <th>Percentage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>@r.Id</td>
+                    <td>@(r.FirstName+r.LastName)</td>
+                    <td>@r.SymbolNumber</td>
+                    <td>@r.English</td>
+                    <td>@r.Economices</td>
+                    <td>@r.Nepali</td>
+                    <td>@r.Account</td>
+                    <td>@r.ComputerScience</td>
+                    <td>@(r.Nepali+r.English+r.Economices+r.ComputerScience+r.Account)</td>
+                        <td>@(r.Nepali+r.English+r.Economices+r.ComputerScience+r.Account)/5</td>
+                        <td>
+                            <a asp-action="Detail" 
+                            asp-controller="Result" 
+                            asp-route-id="@r.Id"
+                             class="btn btn-primary"> Detail</a>
+
+                              <a asp-action="Edit" 
+                            asp-controller="Result" 
+                            asp-route-id="@r.Id"
+                             class="btn btn-primary">Edit</a>
+
+                                <button data-action="Delete" 
+                            data-controller="Result" 
+                            data-id="@r.Id"
+                             data-body-message="Are you sure want to delete?"
+                          class="btn btn-danger delete" >Delete</button>
+
+                        </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    }

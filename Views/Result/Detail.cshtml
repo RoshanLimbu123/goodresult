@@ -1,0 +1,19 @@
+@model Result
+<div class="col col-sm-3"></div>
+<div class="col col-sm-6">
+<div class="card">
+ <div class="card-hearder">
+     symbolNumber:@Model.SymbolNumber
+ </div>
+ <div class="card-body">
+     <p>FullName=@(Model.FirstName+Model.LastName)</p>
+       <p>Nepali:@Model.Nepali</p>
+       <p>English:@Model.English</p>
+       <p>Economices:@Model.Economices</p>
+      <p>ComputerScience:@Model.ComputerScience</p>
+      <p>Account:@Model.Account</p>
+      <p>Total Marks:@(Model.Nepali+Model.English+Model.Economices+Model.ComputerScience+Model.Account)</p>
+      <p>Percentege::@(Model.Nepali+Model.English+Model.Economices+Model.ComputerScience+Model.Account)/5</p>
+ </div>
+</div>
+</div>
